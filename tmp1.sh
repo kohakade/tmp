@@ -8,4 +8,12 @@ sudo sed -i 's/%SERVICE_USER%/glance/g' /etc/glance/glance-registry-paste.ini
 
 sudo sed -i 's/%SERVICE_PASSWORD%/glance/g' /etc/glance/glance-registry-paste.ini
 
+echo "[paste_deploy]">>/etc/glance/glance-registry.conf
+
+echo "flavor = keystone">>/etc/glance/glance-registry.conf
+
+sudo restart glance-api
+
+sudo restart glance-registry
+
 exit
