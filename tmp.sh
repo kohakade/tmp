@@ -22,4 +22,8 @@ sudo sed -i 's/%SERVICE_USER%/glance/g' /etc/glance/glance-api-paste.ini
 
 sudo sed -i 's/%SERVICE_PASSWORD%/glance/g' /etc/glance/glance-api-paste.ini
 
+echo "[paste_deploy]">>/etc/glance/glance-api.conf
+
+echo "flavor = keystone">>/etc/glance/glance-api.conf
+
 exit
